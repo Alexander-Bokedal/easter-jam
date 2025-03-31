@@ -1,3 +1,4 @@
+
 # 🐣 Easter Dev Jam - JDS
 
 Welcome to my submission for the **Easter Dev Jam** hosted by **Junior Dev Sweden (JDS)**! This project is built using **Next.js** and focuses on [briefly describe what your project does, e.g., "an interactive Easter egg hunt game with fun challenges"].
@@ -37,6 +38,7 @@ yarn install  # or npm install
 
 # Run the development server
 yarn dev  # or npm run dev
+
 ```
 
 Then, open [http://localhost:3000](http://localhost:3000) to see it in action! 🚀
