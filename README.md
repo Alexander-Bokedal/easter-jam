@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🐣 Easter Dev Jam - JDS
 
-## Getting Started
+Welcome to my submission for the **Easter Dev Jam** hosted by **Junior Dev Sweden (JDS)**! This project is built using **Next.js** and focuses on [briefly describe what your project does, e.g., "an interactive Easter egg hunt game with fun challenges"].
 
-First, run the development server:
+---
+
+## 🚀 Tech Stack
+
+- **Framework:** Next.js (React)
+- **Styling:** [e.g., Tailwind CSS, CSS Modules, Styled Components]
+- **State Management:** [if applicable, e.g., Zustand, Redux, Context API]
+- **Database:** [if applicable, e.g., Firebase, PostgreSQL, Supabase]
+- **Deployment:** [e.g., Vercel, Netlify]
+
+---
+
+## 🎯 Features
+
+- 🐰 [Feature 1 - brief description]
+- 🌼 [Feature 2 - brief description]
+- 🥚 [Feature 3 - brief description]
+- 🎨 [Optional: Any cool UI/UX elements]
+
+---
+
+## 📦 Installation & Setup
+
+To run the project locally, follow these steps:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git
+cd YOUR_REPO_NAME
+
+# Install dependencies
+yarn install  # or npm install
+
+# Run the development server
+yarn dev  # or npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then, open [http://localhost:3000](http://localhost:3000) to see it in action! 🚀
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎉 How to Contribute
 
-## Learn More
+If you have any suggestions or improvements, feel free to:
+1. Fork the repo
+2. Create a new branch (`feature-xyz`)
+3. Commit your changes
+4. Open a PR!
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📜 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is licensed under the **MIT License**.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔗 Connect
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+If you want to discuss this project or connect with me, find me on:
+- GitHub: [your-github-profile](https://github.com/YOUR_GITHUB_USERNAME)
+- Twitter: [your-twitter-handle](https://twitter.com/YOUR_HANDLE)
+- LinkedIn: [your-linkedin-profile](https://www.linkedin.com/in/YOUR_NAME)
+
+Happy coding! 🐣🎨🚀
+
