@@ -1,26 +1,26 @@
 'use client';
-
-import { useState } from "react";
+import { useReducer } from "react";
 import SpotEgg from "./SpotEgg";
 import ZigZagEgg from "./ZigZagEgg";
 import HeartEgg from "./HeartEgg";
+import { Egg } from "@/types/types";
+import { NextButton } from "./NextButton";
+import { PrevButton } from "./PrevButton";
+import { PrimaryPicker, SecondaryPicker } from "./ColorPickers";
 type ModalProps = {
 	isOpen: boolean;
 	onCloseAction: () => void;
 };
 
 export default function Modal({ isOpen, onCloseAction }: ModalProps) {
-	if (!isOpen) return null; // Hide modal when not open
-
-	const [primaryColor, setPrimaryColor] = useState('#FFFF00');
-	const [secondaryColor, setSecondaryColor] = useState('#FF007F');
-	const handlePrimaryColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		setPrimaryColor(event.target.value);
-	};
-
-	const handleSecondaryColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		setSecondaryColor(event.target.value);
-	};
+	if (!isOpen) return null;
+	const [currentEgg, updateEgg] = useReducer(
+		(prev: Egg, next: Partial<Egg>) => {
+			const newEgg = { ...prev, ...next }
+			return newEgg
+		},
+		{ selected: 'Spots', value: ['Spots', 'ZigZag', 'Hearts'], primaryColor: '#FFFF00', secondaryColor: '#FF007F' }
+	)
 
 	return (
 		<div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm" onClick={onCloseAction}>
@@ -31,37 +31,20 @@ export default function Modal({ isOpen, onCloseAction }: ModalProps) {
 				>
 					✖
 				</button>
-				<h2 className="text-lg font-bold self-center">🥚 Create Your Egg</h2>
+				<div className="flex flex-row justify-between items-center">
+					<PrevButton currentEgg={currentEgg} updateEgg={updateEgg} />
+					<h2 className="text-lg font-bold self-center"> {currentEgg.selected}</h2>
+					<NextButton currentEgg={currentEgg} updateEgg={updateEgg} />
+				</div>
+				{currentEgg.selected === 'Spots' && <SpotEgg primaryColor={currentEgg.primaryColor} secondaryColor={currentEgg.secondaryColor} />}
+				{currentEgg.selected === 'ZigZag' && <ZigZagEgg primaryColor={currentEgg.primaryColor} secondaryColor={currentEgg.secondaryColor} />}
+				{currentEgg.selected === 'Hearts' && <HeartEgg primaryColor={currentEgg.primaryColor} secondaryColor={currentEgg.secondaryColor} />}
 
-				<SpotEgg primaryColor={primaryColor} secondaryColor={secondaryColor} />
-				<ZigZagEgg primaryColor={primaryColor} secondaryColor={secondaryColor} />
-				<HeartEgg primaryColor={primaryColor} secondaryColor={secondaryColor} />
 				<div className="flex justify-evenly" >
-					<div className="flex flex-col items-center">
-						<input
-							type="color"
-							id="primary-color"
-							className="p-1 h-10 w-14 block border border-gray-200 cursor-pointer rounded-lg"
-							value={primaryColor}
-							onChange={handlePrimaryColorChange} />
-						<label htmlFor="primary-color" className="block text-sm font-medium mt-2">
-							Primary Color
-						</label>
+					<PrimaryPicker currentEgg={currentEgg} updateEgg={updateEgg} />
 
-					</div>
-					<div className="flex flex-col items-center">
-						<input
-							type="color"
-							id="secondary-color"
-							className="p-1 h-10 w-14 block border border-gray-200 cursor-pointer rounded-lg"
-							value={secondaryColor}
-							onChange={handleSecondaryColorChange}
-						/>
+					<SecondaryPicker currentEgg={currentEgg} updateEgg={updateEgg} />
 
-						<label htmlFor="secondary-color" className="block text-sm font-medium mt-2 ">
-							Secondary Color
-						</label>
-					</div>
 				</div>
 			</div>
 		</div>
