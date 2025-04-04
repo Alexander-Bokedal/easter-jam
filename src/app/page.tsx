@@ -1,5 +1,4 @@
 'use client';
-import Heart from "@/components/Heart";
 import { useState } from "react";
 import ModalButton from "@/components/ModalButton";
 import Modal from "@/components/Modal";

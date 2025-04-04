@@ -4,4 +4,5 @@ export type Egg = {
 	value: string[],
 	primaryColor: string,
 	secondaryColor: string,
+	message: string,
 }

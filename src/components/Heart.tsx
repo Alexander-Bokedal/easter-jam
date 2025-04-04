@@ -6,11 +6,11 @@ type Props = {
 export default function Heart({ secondaryColor, horizontal, vertical }: Props) {
 	return (
 		<div className={`absolute ${horizontal} ${vertical}`}>
-			<div className="relative w-[20px] h-[18px]">
+			<div className="relative w-[18px] h-[16px]">
 				<div
-					className="absolute w-[10px] h-[16px] rounded-t-full"
+					className="absolute w-[9px] h-[14.4px] rounded-t-full"
 					style={{
-						left: "10px",
+						left: "9px",
 						top: "0",
 						transform: "rotate(-45deg)",
 						transformOrigin: "0 100%",
@@ -19,7 +19,7 @@ export default function Heart({ secondaryColor, horizontal, vertical }: Props) {
 				></div>
 
 				<div
-					className="absolute w-[10px] h-[16px] rounded-t-full"
+					className="absolute w-[9px] h-[14.4px] rounded-t-full"
 					style={{
 						left: "0",
 						top: "0",
