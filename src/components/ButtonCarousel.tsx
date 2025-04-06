@@ -45,7 +45,7 @@ export const ButtonCarousel = ({ currentEgg, updateEgg, primaryColor, secondaryC
 	return (
 		<div className="flex w-full justify-around">
 			<button
-				className=" active:scale-95 hover:scale-105  transition-all ease-in-out left-0 p-2 bg-gray-300 rounded "
+				className="opacity-40 hover:opacity-100 active:scale-95 mt-6 w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-2xl shadow hover:bg-blue-700 transition"
 				onClick={handlePrev}
 			>
 				←
@@ -62,7 +62,7 @@ export const ButtonCarousel = ({ currentEgg, updateEgg, primaryColor, secondaryC
 					transition={{ duration: 0.4, ease: "easeInOut" }}
 					className=" w-full h-full flex items-center justify-center text-lg font-semibold "
 				>
-					<div className='flex flex-col justify-between items-center'>
+					<div className='flex flex-col justify-between items-center pl-[30px] pr-[30px]'>
 						{currentEgg.selected}
 
 						{currentEgg.selected === 'Spots' && <SpotEgg primaryColor={currentEgg.primaryColor} secondaryColor={currentEgg.secondaryColor} />}
@@ -73,7 +73,7 @@ export const ButtonCarousel = ({ currentEgg, updateEgg, primaryColor, secondaryC
 			</AnimatePresence>
 
 			<button
-				className="active:scale-95 hover:scale-105 transition-all ease-in-out right-0 p-2 bg-gray-300 rounded"
+				className="opacity-40 hover:opacity-100 active:scale-95 mt-6 w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-2xl shadow hover:bg-blue-700 transition "
 				onClick={handleNext}
 			>
 				→
