@@ -20,6 +20,7 @@ export default function Modal({ isOpen, onCloseAction }: ModalProps) {
 	}, [onCloseAction]);
 
 	const [currentEgg, updateEgg] = useReducer(
+
 		(prev: Egg, next: Partial<Egg>) => ({ ...prev, ...next }),
 		{
 			selected: "Spots",
@@ -29,6 +30,7 @@ export default function Modal({ isOpen, onCloseAction }: ModalProps) {
 			message: "Glad Påsk!",
 		}
 	);
+
 
 	return (
 		<AnimatePresence>
