@@ -43,9 +43,9 @@ export const ButtonCarousel = ({ currentEgg, updateEgg, primaryColor, secondaryC
 	};
 
 	return (
-		<div className="flex w-full justify-around">
+		<div className="flex w-full items-center justify-around">
 			<button
-				className="opacity-40 hover:opacity-100 active:scale-95 mt-6 w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-2xl shadow hover:bg-blue-700 transition"
+				className="opacity-40 hover:opacity-100 active:scale-95 mt-6 h-[45px] w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-2xl shadow hover:bg-blue-700 transition"
 				onClick={handlePrev}
 			>
 				←
@@ -73,7 +73,7 @@ export const ButtonCarousel = ({ currentEgg, updateEgg, primaryColor, secondaryC
 			</AnimatePresence>
 
 			<button
-				className="opacity-40 hover:opacity-100 active:scale-95 mt-6 w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-2xl shadow hover:bg-blue-700 transition "
+				className="opacity-40 hover:opacity-100 active:scale-95 mt-6 w-full h-[45px] bg-blue-600 text-white font-medium py-2 px-4 rounded-2xl shadow hover:bg-blue-700 transition "
 				onClick={handleNext}
 			>
 				→

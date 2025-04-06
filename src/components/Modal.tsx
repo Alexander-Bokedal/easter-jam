@@ -59,7 +59,7 @@ export default function Modal({ isOpen, onCloseAction }: ModalProps) {
 						</h2>
 
 						{/* liten glow med vald färg och skugga under */}
-						<div className="relative flex justify-center items-center">
+						<div className="relative flex justify-center items-center pb-[20px]">
 							<div
 								className="absolute w-30 h-10 rounded-full blur-xl opacity-100 top-[130px]"
 								style={{ backgroundColor: currentEgg.primaryColor }}
