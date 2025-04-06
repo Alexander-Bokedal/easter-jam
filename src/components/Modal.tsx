@@ -15,7 +15,7 @@ export default function Modal({ isOpen, onCloseAction }: ModalProps) {
 			const newEgg = { ...prev, ...next }
 			return newEgg
 		},
-		{ selected: 'Spots', value: ['Spots', 'ZigZag', 'Hearts'], primaryColor: '#FFFF00', secondaryColor: '#FF007F' }
+		{ selected: 'Spots', value: ['Spots', 'ZigZag', 'Hearts'], primaryColor: '#FFFF00', secondaryColor: '#FF007F', message: '' }
 	)
 
 	return (
