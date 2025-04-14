@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer, } from "react";
 import { Egg } from "@/types/types";
 import { ButtonCarousel } from "./ButtonCarousel";
 import { Form } from "./formComponents/Form";
@@ -25,6 +25,7 @@ export default function Modal({ isOpen, onCloseAction }: ModalProps) {
 		{
 			selected: "Spots",
 			value: ["Spots", "ZigZag", "Hearts",],
+			code: '',
 			primaryColor: "#FFFF00",
 			secondaryColor: "#FF007F",
 			message: "Glad Påsk!",
@@ -55,12 +56,10 @@ export default function Modal({ isOpen, onCloseAction }: ModalProps) {
 							❌
 						</button>
 
-						{/*Ny Rubrik */}
 						<h2 className="text-xl font-bold text-center text-yellow-500 pb-[20px]">
 							Designa ditt påskägg 🐣
 						</h2>
 
-						{/* liten glow med vald färg och skugga under */}
 						<div className="relative flex justify-center items-center pb-[20px]">
 							<div
 								className="absolute w-30 h-10 rounded-full blur-xl opacity-100 top-[130px]"

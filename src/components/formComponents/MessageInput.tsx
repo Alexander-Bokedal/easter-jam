@@ -1,9 +1,14 @@
 'use client'
+import { Egg } from "@/types/types"
 import { ChangeEvent, useState } from "react"
-export const MessageInput = () => {
+type Props = {
+	currentEgg: Egg
+}
+export const MessageInput = ({ currentEgg }: Props) => {
 	const [message, setMessage] = useState('')
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setMessage(e.target.value)
+		currentEgg.message = message
 	}
 	return (
 		<>

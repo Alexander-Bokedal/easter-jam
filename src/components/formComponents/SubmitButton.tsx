@@ -1,20 +1,18 @@
 'use client'
 import { ButtonHTMLAttributes, ChangeEvent, useState } from 'react'
 
-interface SubmitButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> { }
+import { Egg } from '@/types/types'
+interface SubmitButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+	currentEgg: Egg
+}
 
 type SubmitStep = 'idle' | 'code' | 'confirm' | 'submit'
 
-export const SubmitButton = ({ }: SubmitButtonProps) => {
+export const SubmitButton = ({ currentEgg }: SubmitButtonProps) => {
 	const [submitStep, setSubmitStep] = useState<SubmitStep>('idle')
 
 
-	const Log = () => {
-		console.log('This button was clicked')
-	}
 
-	const HandleIdleClick = () => {
-		setSubmitStep('submit')
 
 	const [code, setCode] = useState('')
 	const Log = () => {
@@ -26,6 +24,9 @@ export const SubmitButton = ({ }: SubmitButtonProps) => {
 	const HandleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setCode(e.target.value)
 
+	}
+	const HandleSubmit = () => {
+		currentEgg.code = code
 	}
 
 	return (
@@ -39,9 +40,9 @@ export const SubmitButton = ({ }: SubmitButtonProps) => {
 
 					Create Egg
 				</button>
-			) : null}
+			)}
 
-			{submitStep === 'code' ? (
+			{submitStep === 'code' && (
 				<div className='absolute inset-0 bg-gray-500/75'>
 					<div className='fixed inset-0 z-10 w-screen overflow-y-auto'>
 						<div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0" >
@@ -65,7 +66,7 @@ export const SubmitButton = ({ }: SubmitButtonProps) => {
 										<div className='flex w-full justify-evenly' >
 											<button type='button' className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded' onClick={() => { HandleClick('idle') }}> Cancel </button>
 
-											<button type='button' className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded' onClick={() => { HandleClick('submit') }}> Submit </button>
+											<button type='submit' onClick={HandleSubmit} className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded' > Submit </button>
 										</div>
 									</div>
 								</div>
@@ -73,8 +74,8 @@ export const SubmitButton = ({ }: SubmitButtonProps) => {
 						</div>
 					</div>
 				</div>
-			) : null}
-			{submitStep === 'submit' ? (
+			)}
+			{submitStep === 'submit' && (
 
 				<button
 					onClick={Log}
@@ -87,3 +88,4 @@ export const SubmitButton = ({ }: SubmitButtonProps) => {
 		</>
 	)
 }
+

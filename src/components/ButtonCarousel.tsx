@@ -13,7 +13,7 @@ type Props = {
 	secondaryColor: string
 };
 
-export const ButtonCarousel = ({ currentEgg, updateEgg, primaryColor, secondaryColor }: Props) => {
+export const ButtonCarousel = ({ currentEgg, updateEgg }: Props) => {
 	const [direction, setDirection] = useState<"left" | "right">("right");
 
 	const slideVariants = {
