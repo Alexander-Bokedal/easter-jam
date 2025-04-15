@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { EggListContextProvider } from "@/lib/context";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,7 +29,10 @@ export default function RootLayout({
       <body
         className={`bg-yellow-100 flex justify-center items-center min-h-screen w-dvw ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <EggListContextProvider>
+          {children}
+        </EggListContextProvider>
+        <ToastContainer />
       </body>
     </html>
   );

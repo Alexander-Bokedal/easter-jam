@@ -14,6 +14,7 @@ export const SubmitButton = ({ currentEgg }: SubmitButtonProps) => {
 
 
 
+
 	const [code, setCode] = useState('')
 	const Log = () => {
 		console.log('This button was clicked')

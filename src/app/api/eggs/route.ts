@@ -9,7 +9,7 @@ export async function POST(request: Request) {
     await connectMongoDB();
     await Egg.create({ selected, message, code, primaryColor, secondaryColor });
     return NextResponse.json({ message: "Egg created" }, { status: 201 });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Failed to create egg" },
       { status: 500 },
@@ -30,18 +30,3 @@ export async function GET() {
     );
   }
 }
-
-// export async function DELETE(request: NextRequest) {
-//   try {
-//     const id = request.nextUrl.searchParams.get("id");
-//     await connectMongoDB();
-//     await Egg.findByIdAndDelete(id);
-//     return NextResponse.json({ message: "Egg deleted" }, { status: 200 });
-//   } catch (error) {
-//     console.error("Error deleting egg:", error);
-//     return NextResponse.json(
-//       { error: "Failed to delete Egg" },
-//       { status: 500 },
-//     );
-//   }
-// }

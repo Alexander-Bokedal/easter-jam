@@ -1,5 +1,4 @@
-export const PostEgg = async (selected: String, message: String, code: String, primaryColor: String, secondaryColor: String, e: React.FormEvent) => {
-	e.preventDefault();
+export const PostEgg = async (selected: string, message: string, code: string, primaryColor: string, secondaryColor: string) => {
 
 	const eggData = { selected, message, code, primaryColor, secondaryColor };
 

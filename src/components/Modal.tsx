@@ -4,7 +4,6 @@ import { Egg } from "@/types/types";
 import { ButtonCarousel } from "./ButtonCarousel";
 import { Form } from "./formComponents/Form";
 import { motion, AnimatePresence } from "framer-motion";
-
 type ModalProps = {
 	isOpen: boolean;
 	onCloseAction: () => void;
@@ -77,7 +76,7 @@ export default function Modal({ isOpen, onCloseAction }: ModalProps) {
 						</div>
 
 						<div className="shadow-inner rounded-lg p-3 bg-white/60">
-							<Form currentEgg={currentEgg} updateEgg={updateEgg} />
+							<Form currentEgg={currentEgg} updateEgg={updateEgg} onCloseAction={onCloseAction} />
 						</div>
 					</motion.div>
 				</div>

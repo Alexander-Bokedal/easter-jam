@@ -1,4 +1,5 @@
 'use client';
+import ShowEgg from "@/components/ShowEgg";
 import { useState } from "react";
 import ModalButton from "@/components/ModalButton";
 import Modal from "@/components/Modal";
@@ -6,6 +7,9 @@ import { EggList } from "@/components/EggList";
 import WelcomeText from "@/components/Welcometext";
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const onCloseAction = () => {
+    setIsModalOpen(false)
+  }
 
   return (
     <div className="flex  w-full flex-col min-h-screen items-center">
@@ -17,7 +21,7 @@ export default function Home() {
         <ModalButton title="Create Egg" onClick={() => setIsModalOpen(true)} />
       </div>
 
-      <Modal isOpen={isModalOpen} onCloseAction={() => setIsModalOpen(false)} />
+      <Modal isOpen={isModalOpen} onCloseAction={onCloseAction} />
     </div >
   );
 }

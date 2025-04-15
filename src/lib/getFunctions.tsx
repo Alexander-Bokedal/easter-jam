@@ -32,3 +32,14 @@ export const useFetchEggs = () => {
 
 	return { eggs, loading, error };
 };
+
+export const fetchEggs = async (): Promise<Egg[]> => {
+	const response = await fetch('/api/eggs')
+	const result = await response.json()
+
+	if (!response.ok) {
+		throw new Error(result.error || 'Failed to fetch eggs.')
+	}
+
+	return result.Eggs
+}
