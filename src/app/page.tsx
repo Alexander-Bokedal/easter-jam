@@ -1,5 +1,4 @@
 'use client';
-import ShowEgg from "@/components/ShowEgg";
 import { useState } from "react";
 import ModalButton from "@/components/ModalButton";
 import Modal from "@/components/Modal";
