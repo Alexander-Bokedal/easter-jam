@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Easter Jam",
-  description: "Jamming all easter babyyyyy",
+  description: "Jamming all easter ",
 };
 
 export default function RootLayout({
